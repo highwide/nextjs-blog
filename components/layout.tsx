@@ -1,13 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "./layout.module.css";
+import utilStyles from "../styles/utils.module.css";
+import Link from "next/link";
+import React from "react";
 
-const name = 'highwide'
-export const siteTitle = 'Next.js Sample Website'
+const name = "highwide";
+export const siteTitle = "Next.js Sample Website";
 
-const Layout = ({ children, home }) => {
+const Layout = ({
+  children,
+  home,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
+}) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +43,7 @@ const Layout = ({ children, home }) => {
               width={144}
               alt={name}
             />
-            <h1 classNmae={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
           <>
@@ -69,6 +76,6 @@ const Layout = ({ children, home }) => {
         </div>
       )}
     </div>
-  )
-}
-export default Layout
+  );
+};
+export default Layout;
